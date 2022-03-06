@@ -1,0 +1,777 @@
+/******** Main *********/
+#background {
+
+    position: absolute;
+    left: 5%;
+    height: 100%;
+    background-color: white;
+    width: 90%;
+    border-radius: 50px;
+    z-index: -2;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main h1 {
+    font-size: 50px;
+}
+
+.main {
+    position: relative;
+    top: 51vh;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menyEl {
+    width: 20%;
+    box-shadow: 5px 5px 5px red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 20px;
+    transition: 1s;
+    background-repeat: no-repeat;
+    background-size: 140%;
+}
+
+.menyEl:nth-child(1) {
+    background-image: url("/static/images/Icons/Lunch.jpg");
+}
+
+.menyEl:nth-child(2) {
+    background-image: url("/static/images/Icons/middag.jpg");
+}
+
+.menyEl:nth-child(3) {
+    background-image: url("/static/images/Icons/drikke.jpg");
+}
+
+.menyEl:nth-child(4) {
+    background-image: url("/static/images/Icons/reserved.jpg");
+}
+
+.menyEl:hover {
+    box-shadow: 1px 1px 5px red;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.chois {
+    background: #FFFFCC;
+    background-radius: 10px;
+    border-radius: 10px;
+    padding: 2px;
+    color: #000099;
+    font-size: 30px;
+}
+
+.meny {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header, main {
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#bakBilde {
+    position: fixed;
+    width: 100%;
+    z-index: -2;
+    height: 70%;
+    top: -20%;
+}
+
+/*********Drikkemeny***************/
+#MainDrikkemeny {
+    margin-top: 100px;
+}
+
+.PrisSize {
+    font-size: 30px;
+}
+
+.selectDrikker {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: #e4ff00 2px solid;
+    display: inline-block;
+    margin-bottom: 20px;
+
+}
+
+.wrapper {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns:repeat(3, 1fr);
+}
+
+.wrapper_one {
+    grid-template-columns:600px;
+    justify-content: center;
+}
+
+/******** Lunsjmeny *********/
+#lunchShab {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.zagol {
+    font-size: 30px;
+}
+
+.CheckLable {
+    font-size: 25px;
+    padding: 20px;
+    position: relative;
+
+}
+
+.myCheckbox, .myCheckbox2 {
+    height: 10px;
+    opacity: 0;
+    z-index: -999;
+    transition: 1s;
+    position: absolute;
+
+}
+
+label {
+    transition: 1s;
+
+}
+
+.myCheckbox:checked + label {
+    font-size: 30px;
+    transition: 1s;
+}
+
+.lunchBilde {
+    width: 300px;
+    height: 60%;
+    border-radius: 30px;
+    margin: 0px 30px;
+}
+
+.lunchBlock {
+    display: none;
+    width: 40%;
+    margin: 40px 0px;
+}
+
+.lunchBlock:nth-child(1) {
+    display: none;
+}
+
+.lunchBlock > h3 {
+    width: 64%;
+    position: relative;
+    left: 19%;
+}
+
+.lunchBlock > h2 {
+    font-size: 45px;
+}
+
+.lunchBlock > p {
+    font-size: 30px;
+}
+
+.lunchBlock2 {
+    display: block;
+    width: 40%;
+    margin: 50px 15px;
+    padding: 5px;
+}
+
+#lunch {
+    flex-wrap: wrap;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btnMoreeee , .btnsmall
+{
+    background: #7fe5ff;
+    padding: 5px;
+    border-radius: 20px;
+    color: #000fff;
+    font-size: 20px;
+    transition: 1s;
+}
+
+.btnMoreeee:hover, .btnsmall:hover {
+    transition: 1s;
+    background: #000fff;
+    padding: 5px;
+    color: #7fe5ff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.checkboxes {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.checkboxes > div {
+    border-radius: 20px;
+    margin: 10px;
+    background-image: linear-gradient(#7F7FD5, #86A8E7, #91EAE4);
+}
+
+/* .test
+ {
+     padding:20px;
+ }
+ .test > div
+ {
+     width:50px;
+     padding:40px;
+ }
+     .text ~ div
+ {
+     width:50px;
+     padding:40px;
+     background:black;
+ }*/
+/******************Middagsmeny*****************************/
+#MainMiddagsmeny {
+    margin-top: 100px;
+}
+
+.radioKnapper {
+    margin: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1000px;
+    justify-content: space-between;
+}
+
+.radioKnapper > div {
+    width: 250px;
+    border-radius: 20px;
+    margin: 10px;
+    height: 165px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+
+.radioKnapper > div:nth-child(1) {
+    background-image: url("/static/images/Icons/drikke/vinn.jpg");
+}
+
+.radioKnapper > div:nth-child(2) {
+    background-image: url("/static/images/Icons/drikke/Ol.jpg");
+}
+
+.radioKnapper > div:nth-child(3) {
+    background-image: url("/static/images/Icons/drikke/Mineraler.jpg");
+}
+
+.LableCheck {
+    cursor: pointer;
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    border-radius: 20px;
+    top: 60px;
+    color: white;
+    background: #0056ff75;
+    transition: 1s;
+}
+.LableCheck_activ
+{
+    padding: 15px;
+
+}
+
+.middagsmenyEl {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.middagsmenyEl h2 {
+    font-size: 35px;
+}
+
+.MiddBileter {
+    border-radius: 50px;
+    padding: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.MiddBilde {
+    width: 20vw;
+    height: 280px;
+    border-radius: 100px;
+}
+
+.delInfo {
+    width: 70%;
+    position: relative;
+    left: 15%;
+}
+
+.middMatt {
+    max-width: 33%;
+}
+
+.middMatt:nth-child(1) {
+    display: none;
+}
+
+.middMatt b {
+    font-size: 30px;
+}
+
+.MdiddagLable {
+    background: #0043ff7d;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.MdiddagLable:hover {
+    padding: 15px;
+    background: #0043ffff;
+    color: white;
+    cursor: pointer;
+}
+
+
+/**************** Bordbestilling*******************/
+
+.BordInputs
+{
+    display: flex;
+    flex-direction: column;
+}
+.zal {
+    width: 700px;
+    height: 300px;
+    background: url("/static/images/boebestilling/bordene.jpg");
+    background-size:cover ;
+    position: relative;
+}
+
+.table {
+    position: absolute;
+    background: green;
+    width: 20px;
+    height: 20px;
+}
+.activ_Table
+{
+    background: yellow;
+    opacity: 0.5;
+}
+
+/**************************tabeles*********************************/
+.table0
+{
+    left: 39px;
+    bottom: 38px;
+    width: 90px;
+    height: 50px;
+    opacity: 0.3;
+}
+.table1
+{
+    left: 170px;
+    bottom: 140px;
+    width: 55px;
+    height: 40px;
+    opacity: 0.3;
+}
+.table2
+{
+    left: 482px;
+    bottom: 140px;
+    width: 55px;
+    height: 40px;
+    opacity: 0.3;
+}
+.table3
+{
+    left: 580px;
+    bottom: 38px;
+    width: 90px;
+    height: 50px;
+    opacity: 0.3;
+}
+.table4
+{
+    left: 270px;
+    bottom: 140px;
+    width: 55px;
+    height: 40px;
+    opacity: 0.3;
+}
+.table5
+{
+    left: 380px;
+    bottom: 140px;
+    width: 55px;
+    height: 40px;
+    opacity: 0.3;
+}
+.table6
+{
+    left: 270px;
+    bottom: 38px;
+    width: 70px;
+    height: 50px;
+    opacity: 0.3;
+
+}
+.table7
+{
+    left: 360px;
+    bottom: 38px;
+    width: 70px;
+    height: 50px;
+    opacity: 0.3;
+}
+.table8
+{
+    left: 73px;
+    bottom: 105px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+
+}
+.table9
+{
+    left: 590px;
+    bottom: 105px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+
+}
+.table10
+{
+
+    left: 200px;
+    bottom: 95px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+}
+.table11
+{
+    left: 465px;
+    bottom: 90px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+
+}
+.table12
+{
+    left: 325px;
+    bottom: 100px;
+    width: 50px;
+    height: 30px;
+    opacity: 0.3;
+}
+/******************************************************/
+.Tnumber {
+    display: none;
+    position: absolute;
+    width: 2%;
+    left: 49%;
+}
+.Tnumber1 {
+    margin: 10px 0px;
+}
+.BordBestiling
+{
+    min-width: 20%;
+}
+#BordForm
+{
+    width: 100%;
+}
+#BordForm
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+#MainBordbestilling
+{
+    width: 90%;
+}
+.BordInputs
+{
+
+    width: 40%;
+}
+
+.modalWraper
+{
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(127, 229, 255, 0.56);
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+.modalContent
+{
+    padding: 30px;
+    text-align: center;
+    width: 50%;
+    background-color: white;
+    height: 50vh;
+    border-radius: 30px;
+    position: relative;
+}
+.modalClose
+{
+    position: absolute;
+    right:10px;
+    top: 10px;
+    font-size: 30px;
+}
+
+/**************Kvitering***************/
+#kvitering {
+    text-align: center;
+    top: -3%;
+    left: 30%;
+    margin: 10px;
+    position: fixed;
+    flex-direction: column;
+    background: #F6F6F6;
+    width: 40%;
+    height: 100%;
+    z-index: 4;
+    display: flex;
+    border-radius: 50px;
+
+}
+
+.Betal {
+    position: absolute;
+    top: 5px;
+}
+
+#scroll {
+    height: 70%;
+    margin: 0px 0px;
+    padding-top: 70px;
+    overflow: auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#kurv {
+    position: absolute;
+    top: 270px;
+    left: 42.5%;
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    background: #F6F6F6;
+    padding: 20px 5px;
+}
+
+#kurv button {
+    width: 150px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #A5FA9F;
+    transition: 1s;
+}
+
+#kurv button:hover {
+    background: #32B1FF;
+    transition: 1s;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#KvitKnaper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.KvitKnap {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: #43FFEE;
+    font-size: 30px;
+    transition: 1s;
+
+}
+
+.KvitKnap:hover {
+    background: #E8FF43;
+    transition: 1s;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#Kvn {
+    display: flex;
+    justify-content: center;
+}
+
+/***********Kvitering 2. variant************/
+/***********Kap xxxxxxxxx************/
+.close {
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    border: solid 2px;
+    color: #BA8A87;
+}
+
+.close:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    content: '     ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+/******************/
+.KvitLi {
+    font-size: 30px;
+
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px;
+    margin: 20px 3%;
+    min-height: 50px;
+    max-height: 65px;
+    width: 93%;
+}
+
+.KvitLi > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PlusMinus {
+    display: flex;
+    width: 20%;
+}
+
+.PlusMinus button {
+    height: 30px;
+    width: 30px;
+}
+
+.KvitPris {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BtnMin, .BtnPlus {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background: white;
+    color: green;
+    transition: 1s;
+}
+
+.BtnMin:hover, .BtnPlus:hover {
+    transition: 1s;
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+
+#KvitBack {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #d5d5d5db;
+    display: none;
+}
+
+.MiddagChoisInfo {
+    background-color: red;
+    display: none;
+}

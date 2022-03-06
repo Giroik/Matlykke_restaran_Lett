@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/Style.css">
+    <title>Venera project</title>
+</head>
+<body id="wolf">
+<!----Background bilde  ---->
+<img id="bakBilde" src="static/images/img1.jpg">
+
+<!----Hoved div som inneholder main informasjon  ---->
+<div class="main" id="main">
+    <!----Jeg lager den div for å lage whit farge på background av informasjon og meny ---->
+    <div id="background"></div>
+    <!---- Kurven hvor man kan se alle varene  ---->
+    <div id="kurv">
+        <h2>Varene i kurven: </h2>
+        <h2 style="width:29px;" id="varene">0</h2>
+        <!----funksjon til å åpne kvitering  ---->
+        <button onclick="visKvit()">Vise varene</button>
+    </div>
+    <!----øverste del som inneholder 4 variantene: Lunsjmeny, Middagsmeny, Drikkemeny, Bordbestilling  ---->
+    <header>
+        <div class="meny">
+            <div class="menyEl" onclick="openn('MainLunsjmeny')"><a class="chois"><b>Lunsjmeny</b></a></div>
+            <div class="menyEl" onclick="openn('MainMiddagsmeny')"><a class="chois"><b>Middagsmeny</b></a></div>
+            <div class="menyEl" onclick="openn('MainDrikkemeny')"><a class="chois"><b>Drikkemeny</b></a></div>
+            <div class="menyEl" onclick="openn('MainBordbestilling')"><a class="chois"><b>Bordbestilling</b></a></div>
+        </div>
+    </header>
+    <!----lager diven "main" som skal inneholde 4 sider, men alle skal ha display="none" på starten og hvis man klikker på Drikkemeny diven med den navn skal byttes til display="block" og de andre skal få style display="none"---->
+    <main>
+
+        <!---------------------------------------MainLunsjmeny-------------------------------------------------->
+
+        <!--Lunsjmeny, den inneholder 5 varer-->
+        <div id="MainLunsjmeny" style="display: none">
+            <h1 style="position: relative;top:85px;">Lunsjmeny</h1>
+            <div id="block111" class="checkboxes">
+
+                <div>
+                    <!--Her bruker jeg checkboxer,hvis vi trykker på den, kommer noen konkret mat-->
+                    <input type="checkbox" class="myCheckbox" id="check1" onclick="visse('El53010')">
+                    <!--i lable bruker jeg atribut for, det betyr at hvis vi klikker på label så input type="checkbox" skal aktiveres-->
+                    <label for="check1" class="CheckLable">Lamb Tzatziki Burgers</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="myCheckbox" id="check2" onclick="visse('El53063')">
+                    <label for="check2" class="CheckLable">Chivito uruguayo</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="myCheckbox" id="check3" onclick="visse('El52777')">
+                    <label for="check3" class="CheckLable">Mediterranean Pasta Salad</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="myCheckbox" id="check4" onclick="visse('El52973')">
+                    <label for="check4" class="CheckLable">Leblebi Soup</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="myCheckbox" id="check5" onclick="visse('El53035')">
+                    <label for="check5" class="CheckLable">Ham hock colcannon</label>
+                </div>
+            </div>
+            <!--den diven inneholder 5 forsjelige varene, de lages med hjelp av js -->
+            <div id="lunchShab">
+                <!--Her kan du se en malen hvordan divene skal se ut-->
+                <div class="lunchBlock" id="ShabBlock">
+                    <h2 id="zagol"></h2>
+                    <img class="lunchBilde" id="ShabId">
+                    <h3 id="ShabInfo"></h3>
+                    <p>Pris: <b id="ShabPris">0$</b></p>
+                    <button class="btnMoreeee">legg i kurven</button>
+                    <button class="btnsmall">ta ut av kurven</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!------------------------------------------------MainMiddagsmeny---------------------------------------------------->
+
+
+        <div id="MainMiddagsmeny" style="display: none">
+            <h1>Middagsmeny</h1>
+            <div class="middagsmenyEl" id="alleMiddagsVariantene" style="display:flex;">
+                <h2>Forret</h2>
+                <div id="forret1" class="MiddBileter">
+                    <div class="middMatt" id="MiddShab">
+                        <h2 class="zagol" id="MiddZag"></h2>
+                        <img class="MiddBilde" id="MiddBilde">
+                        <div class="choseDiv">
+                            <input class="MiddagChoisInfo" name="MidShabName" type="radio" id="inputMidShab"><br>
+                            <label class="MdiddagLable" for="inputMidShab" id="labelShablonMid">Les mer</label><br><br>
+                        </div>
+                        <div class="infoBlocker" style="display:none;" id="ShabMidInfo">
+                            <h3 class="delInfo" id="ShabMidInfo2"></h3>
+                            <p><b id="PrisShabMid">Pris: $</b></p>
+                        </div>
+
+                        <button class="btnMoreeee" id="BTNMore">legg i kurven</button>
+                        <button class="btnsmall" id="BTNSmall">ta ut av kurven</button>
+                    </div>
+
+                </div>
+
+                <h2>Hovedrett</h2>
+                <div id="hovedrett1" class="MiddBileter">
+                    <div class="middMatt" id="MiddShab2">
+                        <h2 class="zagol" id="MiddZag2"></h2>
+                        <img class="MiddBilde" id="MiddBilde2">
+                        <div class="choseDiv">
+                            <input class="MiddagChoisInfo" name="MidShabName" type="radio" id="inputMidShab2"><br>
+                            <label class="MdiddagLable" for="inputMidShab" id="labelShablonHov">Les mer</label><br><br>
+                        </div>
+                        <div class="infoBlocker" style="display:none;" id="ShabMidInfoto">
+                            <h3 class="delInfo" id="ShabMidInfo2to"></h3>
+                            <p><b id="PrisShabMidto">Pris: $</b></p>
+                        </div>
+
+                        <button class="btnMoreeee">legg i kurven</button>
+                        <button class="btnsmall">ta ut av kurven</button>
+                    </div>
+                </div>
+                <h2>Desseter</h2>
+                <div id="dessert1" class="MiddBileter">
+                    <div class="middMatt" id="MiddShab3">
+                        <h2 class="zagol" id="MiddZag3"></h2>
+                        <img class="MiddBilde" id="MiddBilde3">
+                        <div class="choseDiv">
+                            <input class="MiddagChoisInfo" name="MidShabName" type="radio" id="inputMidShab3"><br>
+                            <label class="MdiddagLable" for="inputMidShab" id="labelShablonDis">Les mer</label><br><br>
+                        </div>
+                        <div class="infoBlocker" style="display:none;" id="ShabMidInfotre">
+                            <h3 class="delInfo" id="ShabMidInfo23"></h3>
+                            <p><b id="PrisShabMidtre">Pris: $</b></p>
+                        </div>
+                        <button class="btnMoreeee">legg i kurven</button>
+                        <button class="btnsmall">ta ut av kurven</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--------------------------------------drikkeNE-------------------------------------------------------------->
+
+
+        <div id="MainDrikkemeny" style="display: none">
+
+            <h1>Drikkemeny</h1>
+            <div id="block222" class="radioKnapper">
+                <div class="radio" id="Vin_block">
+                    <input type="radio" name="midmeny" class="myCheckbox2" id="VinOn">
+                    <label for="VinOn" class="LableCheck">Vin</label>
+                </div>
+                <div class="radio" id="Ol_block">
+                    <input type="radio" name="midmeny" class="myCheckbox2" id="OlOn">
+                    <label for="OlOn" class="LableCheck">Øl</label>
+                </div>
+                <div class="radio" id="Mineral_block">
+                    <input type="radio" name="midmeny" class="myCheckbox2" id="MineralOn">
+                    <label for="MineralOn" class="LableCheck">Mineral</label>
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column; aling-items:center;">
+                <!-----------------------drikke------------->
+                <div id="drikke">
+
+                    <div id="Vin" style="display:none;">
+                        <h1>Vin</h1>
+
+                        <select id="VinnSel" class="selectDrikker">
+                            <option value="all">Se alle typer av vinn</option>
+                        </select>
+
+                        <div class="wrapper">
+
+                            <div id="ShablonVinElementer" class="middMatt2" style="display: none">
+                                <h2 id="ShablonVinZagol"></h2>
+                                <img id="ShablonVinImg" class="lunchBilde">
+                                <p class="PrisSize"><b id="ShablonVinPris"></b></p>
+                                <button class="btnMoreeee">legg i kurven</button>
+                                <button class="btnsmall">ta ut av kurven</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="Ol" style="display:none;">
+                        <h1>Øl</h1>
+                        <select id="OlSel" class="selectDrikker">
+                            <option value="all">Se alle typer av Øl</option>
+                        </select>
+
+                        <div class="wrapper">
+
+                            <div id="ShablonOlElementer" class="middMatt2" style="display: none">
+                                <h2 id="ShablonOlZagol"></h2>
+                                <img id="ShablonOlImg" class="lunchBilde">
+                                <p class="PrisSize"><b id="ShablonOlPris"></b></p>
+                                <button class="btnMoreeee">legg i kurven</button>
+                                <button class="btnsmall">ta ut av kurven</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="Mineral" style="display:none;">
+                        <h1>Bruser</h1>
+                        <select id="MinerallSel" class="selectDrikker">
+                            <option value="all">Se alle typer av bruser</option>
+                        </select>
+
+                        <div class="wrapper">
+
+                            <div id="ShablonMineralElementer" class="middMatt2" style="display:none;">
+                                <h2 id="ShablonMineralZagol"></h2>
+                                <img id="ShablonMineralImg" class="lunchBilde">
+                                <p class="PrisSize"><b id="ShablonMineralPris"></b></p>
+                                <button class="btnMoreeee">legg i kurven</button>
+                                <button class="btnsmall">ta ut av kurven</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div id="MainBordbestilling" style="display: none; margin-top: 150px;">
+
+            <form id="BordForm">
+                <div class="BordInputs">
+                    <input required type="number" min="1" max="53" class="Tnumber1" name="Antal" placeholder="Antal personer">
+                    <input required type="date" class="Tnumber1" name="date" placeholder="date">
+                    <input required type="time" class="Tnumber1" name="time">
+                    <input required type="text" class="Tnumber1" name="allergener" placeholder="Allergener">
+                    <input required type="name" class="Tnumber1" name="Name" placeholder="Navn og Etternavn">
+                    <input required type="tel" class="Tnumber1" name="Phone" placeholder="Phone number">
+                    <input required type="email" class="Tnumber1" name="email" placeholder="email">
+                </div>
+
+                <div class="BordBestiling">
+                    <p style="font-size: 30px">Select tabel</p>
+                    <div class="zal" style="margin: 20px 0px">
+
+
+                        <input type="text" class="Tnumber" id="Tnumber" name="tableNumber">
+
+                    </div>
+                    <input type="submit" style="width: 200px; height: 50px">
+                </div>
+
+            </form>
+
+        </div>
+
+
+    </main>
+    <footer>
+        <div id="KvitBack">
+            <div id="kvitering">
+                <h2 style="font-size:40px;">I kurven</h2>
+                <div id="scroll">
+
+                    <div id="Shablon" class="KvitLi" style="display: none; margin-top: 0;">
+                        <h4></h4>
+                        <div class="PlusMinus">
+                            <input type="button" class="BtnMin" value="-" id="ShablonMinbtn">
+                            <p id="ShablonAntal">1</p>
+                            <input type="button" class="BtnPlus" value="+" id="ShablonMaxbtn">
+                        </div>
+                        <div class="KvitPris">
+                            <p id="ShablonPris"></p>
+                            <span class="close" id="ShablonClose"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="Kvn">
+                    <h2>Pris: </h2>
+                    <h2 id="KvitBigPris">0</h2>
+                </div>
+                <div id="KvitKnaper">
+                    <button onclick="kvitering()" id="Betal" class="KvitKnap">Betale</button>
+                    <button onclick="Tilbake()" id="FoKvit" class="KvitKnap">Gå tilbake</button>
+                    <button onclick="allLegeUt()" id="allLegeUt" class="KvitKnap">Lege ut alle varene</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<div class="modalWraper" style="display: none">
+    <div class="modalContent">
+        <span class="modalClose">X</span>
+        <div class="modalText">
+            <h2>Hei kære <span id="Name">kunder</span></h2>
+            <h2>Vi har reservert for deg bordet/ene:<span id="tableNumber"></span></h2>
+            <h2>Tid: <span id="dateTime"></span></h2>
+            <h2>Alergener: <span id="Alergener"></span></h2>
+            <h2>Telefon nummer: <span id="TelefonNum"></span></h2>
+            <h2>Email: <span id="EmailText"></span></h2>
+        </div>
+        <h1><p class="modal-Error" style="display: none">Velg bordet</p></h1>
+    </div>
+</div>
+
+
+
+<script src="static/js/Hoved.js"></script>
+<script src="static/js/Lunsjmeny.js"></script>
+<script src="static/js/Middagsmeny.js"></script>
+<script src="static/js/Drikkemeny.js"></script>
+<script src="static/js/Bordbestilling.js"></script>
+<script src="static/js/Kvitering.js"></script>
+
+</body>
+</html>
